@@ -72,7 +72,10 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            #bglbl
+            {
+                color: #4248f5;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -85,17 +88,18 @@
                     <div class="card">
                         <div class="card-body">
                                 <img style="width:200px" class="mr-3" src="{{ asset('imgs/IPC_ori.png') }}" alt="Generic placeholder image">
+                                <h2>OPERATION GATHERING 2019 <br>  YOGYAKARTA</h2>
                             <hr>
                             <form action="{{ route('lavatur.attendSave') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $attend->id }}">
                                 <input type="hidden" name="time" value="{{ $time }}">
                                 <div class="form-group">
-                                    <label for="name"></label>
-                                    <strong>{!! $attend->name !!}</strong>
+                                    <h1><label for="name"></label>
+                                    <strong>{!! $attend->name !!}</strong></h1>
                                 </div>
                                 <div class="form-group">
-                                    <label for="source">Source</label>
+                                    <label for="source">Entitas</label>
                                     <label for="">:</label>
                                     <label for="value">{{ $attend->bagian->name }}</label>
                                 </div>
@@ -104,9 +108,34 @@
                                     <label for="">:</label>
                                     <label for="value">{{ $time }}</label>
                                 </div>
+                                <div class="form-group">
+                                   <h3> <label for="attendace">Nomor Meja</label>
+                                    <label for="">:</label>
+                                   <label for="value">{{ $attend->no_meja }}</label></h3> 
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label for="attendace">Email</label>
+                                    <label for="">:</label>
+                                    <label for="value">{{ $attend->email }}</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="attendace">Nomor Telefon</label>
+                                    <label for="">:</label>
+                                    <label for="value">{{ $attend->tlp }}</label>
+                                </div>
+ -->                             <div class="form-group">
+                                    <!-- <label for="institusion">Email</label><br> -->
+                                    <input required type="text" name="email" id="email" value="{{ $attend->email }}"class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="institusion">Nomor Telepon</label><br> -->
+                                    <input required type="text" name="tlp" id="tlp" class="form-control" placeholder="Nomor Telepon">
+                                </div>
+
                                 @if (!empty($day))
                                 <div class="form-group">
-                                    <label for="attend">Lavatour Attendance</label>
+                                    <!-- <label for="attend">Lava Tour Attendance</label> -->
+                                    <label for="attend">Lava Tour Attendance</label>
                                     <label for="">:</label>
                                     <label for="">
                                         <input type="hidden" name="" value="{{ $attend->lava_tour }}">
@@ -130,7 +159,7 @@
                                 </div>
                                 @else
                                 <div class="form-group">
-                                    <label for="attend">Lavatour Attendance</label>
+                                   <strong><label for="attend">Lava Tour Attendance</label> 
                                     <label for="">:</label>
                                     <label for="">
                                         <input type="hidden" name="" value="{{ $attend->lava_tour }}">
@@ -146,7 +175,7 @@
                                             <input type="radio" class="ml" name="attend" id="attend" value="1" required> Yes
                                             <input type="radio" class="ml" name="attend" id="attend" value="0"> No
                                         @endif
-                                    </label>
+                                    </label></strong>
                                 </div>
                                 <hr>
                                 <button type="submit" class="btn btn-success ml5">Attend</button>

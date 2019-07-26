@@ -73,6 +73,7 @@
                     <div class="card">
                         <div class="card-body">
                             <img style="width:200px" class="mr-3" src="{{ asset('imgs/IPC_ori.png') }}" alt="Generic placeholder image">
+                           <strong> <h2>OPERATION GATHERING 2019 <br>  YOGYAKARTA</h2></strong>
                             <hr>
                             <form action="#">
                                 <div class="form-group">
@@ -93,7 +94,7 @@
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                            <td><label for="name">Source</label></td>
+                                            <td><label for="name">Entitas</label></td>
                                             <td><label for="">:</label></td>
                                             <td><label for="">Source 1</label></td>
                                         </tr>
@@ -107,7 +108,7 @@
                                     </div>
                                     <div class="form-group">
                                         <tr>
-                                            <td><label for="attend">Attending Lavatur</label></td>
+                                            <td><label for="attend">Attending Lava Tour</label></td>
                                             <td colspan="2">
                                                 <input type="radio" name="is_attand" id=""> Yes
                                                 <input type="radio" name="is_attand" id=""> No

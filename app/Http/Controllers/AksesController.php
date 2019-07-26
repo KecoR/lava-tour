@@ -57,7 +57,7 @@ class AksesController extends Controller
         $time = Carbon::now();
         $checkDay = Carbon::now()->format('d');
         
-        if ($checkDay == "29") {
+        if ($checkDay == "26") {
             $day = $attend->hari_1;
             return view('attendView', ['attend' => $attend, 'time' => $time, 'day' => $day]);
         } elseif ($checkDay == "30") {
@@ -79,15 +79,17 @@ class AksesController extends Controller
         if($day == "29"){
             $id = $request->get('id');
             $time = $request->get('time');
-            $attend = $request->get('attend');
+                        $attend = $request->get('attend');
 
             $user = Attendance::where('id', $id)->first();
             $user->hari_1 = 1;
             $user->time_1 = $time;
             $user->lava_tour = $attend;
+            $user->email = $request->get('email');
+            $user->tlp = $request->get('tlp');
             $user->save();
 
-            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfully.');
+            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfull.');
         } elseif ($day == "30" ) {
             $id = $request->get('id');
             $time = $request->get('time');
@@ -97,9 +99,11 @@ class AksesController extends Controller
             $user->hari_2 = 1;
             $user->time_2 = $time;
             $user->lava_tour = $attend;
+            $user->email = $request->get('email');
+            $user->tlp = $request->get('tlp');
             $user->save();
 
-            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfully.');
+            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfull.');
         } elseif ($day == "31") {
             $id = $request->get('id');
             $time = $request->get('time');
@@ -109,9 +113,11 @@ class AksesController extends Controller
             $user->hari_3 = 1;
             $user->time_3 = $time;
             $user->lava_tour = $attend;
+            $user->email = $request->get('email');
+            $user->tlp = $request->get('tlp');
             $user->save();
 
-            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfully.');
+            return redirect()->route('welcome', ['units' => $unit])->with('status', $user->name.' Attendance Successfull.');
         }
     }
 
@@ -127,6 +133,9 @@ class AksesController extends Controller
         $user = new Attendance;
         $user->name = $request->get('name');
         $user->bagian_id = $request->get('bagian');
+        $user->no_meja = $request->get('no_meja');
+        // $user->email = $request->get('email');
+        // $user->tlp = $request->get('tlp');
         $user->save();
 
         return redirect()->back()->with('status', 'Berhasil menambahkan peserta');

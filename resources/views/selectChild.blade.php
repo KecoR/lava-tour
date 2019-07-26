@@ -77,6 +77,7 @@
                     <div class="card">
                         <div class="card-body">
                             <img style="width:200px" class="mr-3" src="{{ asset('imgs/IPC_ori.png') }}" alt="Generic placeholder image">
+                            <h2>OPERATION GATHERING 2019 <br>  YOGYAKARTA</h2>
                             <hr>
                             <form action="#">
                                 <div class="form-group">

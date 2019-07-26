@@ -30,7 +30,10 @@ class AttendanceExport implements FromArray, WithHeadings
             'Waktu',
             'Lava Tour',
             'created_at',
-            'updated_at'
+            'updated_at',
+            'Nomor Meja',
+            'E-mail',
+            'Nomor Telefon'
         ];
     }
 }

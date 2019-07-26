@@ -82,8 +82,9 @@
                     <div class="card">
                         <div class="card-body">
                             <img style="width:200px" class="mr-3" src="{{ asset('imgs/IPC_ori.png') }}" alt="Generic placeholder image">
-                            <hr>
+                           <hr>
                             <form style="width:325px" action="{{ route('userAdd.save') }}" method="POST">
+                                <strong><h2>OPERATION GATHERING 2019 <br>  YOGYAKARTA</h2></strong>
                                 @csrf
                                 <div class="form-group">
                                     <label for="institusion">Nama Peserta</label><br>
@@ -97,7 +98,21 @@
                                             <option value="{{ $bagian->id }}">{{ $bagian->name }}</option>
                                         @endforeach
                                     </select>
+                                    <div class="form-group">
+                                        <label for="institusion">Nomor Meja</label><br>
+                                        <input required type="text" name="no_meja" id="no_meja" class="form-control" placeholder="1-30">
                                 </div>
+
+                                <!-- <div class="form-group">
+                                    <label for="institusion">Email</label><br>
+                                    <input required type="text" name="email" id="email" class="form-control" placeholder="nama@email.com">
+                                </div> -->
+                                <!-- <div class="form-group">
+                                    <label for="institusion">Nomor Telefon</label><br>
+                                    <input required type="text" name="tlp" id="tlp" class="form-control" placeholder="08........">
+                                </div> -->
+
+                                <!-- </div> -->
                                 <button type="submit" class="btn btn-block btn-primary">Simpan</button>
                                 <a href="{{ route('exporttoExcel') }}" class="btn btn-success btn-block">Export Excel</a>
                             </form>
