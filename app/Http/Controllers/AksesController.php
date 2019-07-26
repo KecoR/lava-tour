@@ -57,7 +57,7 @@ class AksesController extends Controller
         $time = Carbon::now();
         $checkDay = Carbon::now()->format('d');
         
-        if ($checkDay == "26") {
+        if ($checkDay == "29") {
             $day = $attend->hari_1;
             return view('attendView', ['attend' => $attend, 'time' => $time, 'day' => $day]);
         } elseif ($checkDay == "30") {
@@ -76,7 +76,7 @@ class AksesController extends Controller
 
         $day = Carbon::now()->format('d');
 
-        if($day == "26"){
+        if($day == "29"){
             $id = $request->get('id');
             $time = $request->get('time');
             $attend = $request->get('attend');
